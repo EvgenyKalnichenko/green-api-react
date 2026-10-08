@@ -1,0 +1,295 @@
+:root {
+  --bg: #121212;
+  --bg-sidebar: #1a1a1a;
+  --bg-panel: #202020;
+  --bg-input: #2a2a2a;
+  --bg-hover: #2c2c2c;
+  --bg-active: #333333;
+  --bubble-in: #2b2b2b;
+  --bubble-out: #2a6b66;
+  --text: #f2f2f2;
+  --text-muted: #9a9a9a;
+  --accent: #3cb8b0;
+  --accent-hover: #48c9c0;
+  --danger: #e57474;
+  --border: #2e2e2e;
+  --radius: 12px;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.login {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  background: #141414;
+}
+
+.login-card {
+  width: min(420px, calc(100% - 32px));
+  background: #1c1c1c;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 28px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 16px;
+  border-radius: 14px;
+  background: #fff;
+  color: #111;
+}
+
+.login-card h1 {
+  margin: 0 0 8px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.login-card p {
+  margin: 0 0 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.error {
+  color: var(--danger);
+  font-size: 13px;
+  margin: 0 0 12px;
+}
+
+.composer-error {
+  position: absolute;
+  left: 20px;
+  top: -28px;
+  margin: 0;
+}
+
+.app {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+}
+
+.sidebar {
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.sidebar-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sidebar-close {
+  display: none;
+}
+
+.new-chat {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.new-chat-row {
+  display: flex;
+  gap: 8px;
+}
+
+.new-chat-row .ui-field--inline {
+  flex: 1;
+}
+
+.new-chat-row .ui-button {
+  padding: 10px 14px;
+}
+
+.chat-list {
+  overflow: auto;
+  flex: 1;
+}
+
+.chat-item {
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.chat-item:hover {
+  background: var(--bg-hover);
+}
+
+.chat-item.active {
+  background: var(--bg-active);
+}
+
+.chat-item strong {
+  font-size: 14px;
+}
+
+.chat-item span {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: #161616;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-panel);
+}
+
+.chat-header__info {
+  min-width: 0;
+}
+
+.chat-header strong {
+  display: block;
+}
+
+.chat-header span {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.menu-btn {
+  display: none;
+}
+
+.messages {
+  flex: 1;
+  overflow: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bubble {
+  max-width: min(72%, 560px);
+  padding: 10px 12px;
+  border-radius: 14px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.bubble.outgoing {
+  align-self: flex-end;
+  background: var(--bubble-out);
+}
+
+.bubble.incoming {
+  align-self: flex-start;
+  background: var(--bubble-in);
+}
+
+.bubble time {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.65);
+  text-align: right;
+}
+
+.composer {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  padding: 16px 20px;
+  border-top: 1px solid var(--border);
+  background: var(--bg-panel);
+}
+
+.composer .ui-field--inline {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.empty {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+}
+
+@media (max-width: 760px) {
+  .app {
+    position: relative;
+    grid-template-columns: 1fr;
+  }
+
+  .menu-btn,
+  .sidebar-close {
+    display: inline-flex;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .sidebar.visible {
+    display: flex;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+  }
+}

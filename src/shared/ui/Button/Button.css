@@ -1,0 +1,32 @@
+.ui-button {
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ui-button--primary {
+  background: var(--accent);
+  color: #111;
+}
+
+.ui-button--primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.ui-button--ghost {
+  background: transparent;
+  color: var(--text-muted);
+  padding: 8px 10px;
+}
+
+.ui-button--full {
+  width: 100%;
+}
+
+.ui-button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}

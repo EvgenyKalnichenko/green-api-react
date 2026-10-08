@@ -1,0 +1,40 @@
+.ui-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.ui-field__label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.ui-input {
+  width: 100%;
+  border: 1px solid transparent;
+  background: var(--bg-input);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 12px 14px;
+  outline: none;
+  font: inherit;
+}
+
+.ui-input:focus {
+  border-color: var(--accent);
+}
+
+.ui-field__error {
+  color: var(--danger);
+  font-size: 13px;
+}
+
+.ui-field--inline {
+  margin-bottom: 0;
+  flex: 1;
+}
+
+.ui-field--inline .ui-input {
+  padding: 10px 12px;
+}
