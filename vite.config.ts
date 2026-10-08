@@ -68,7 +68,7 @@ export default defineConfig({
   plugins: [react(), greenApiProxy()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      '@': path.resolve(import.meta.dirname, 'src'),
     },
   },
 })
